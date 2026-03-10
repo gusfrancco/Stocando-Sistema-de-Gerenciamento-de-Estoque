@@ -4,11 +4,13 @@ function LoginForm({ onUserInputChange, onPassInputChange }) {
   return (
     <section>
       <div className="login-input">
-        <input onChange={onUserInputChange} type="text" placeholder="Email" />
+        <p>E-mail</p>
+        <input onChange={onUserInputChange} type="text" placeholder="seuemail@email.com" />
+        <p>Senha</p>
         <input
           onChange={onPassInputChange}
           type="password"
-          placeholder="Senha"
+          placeholder="senha123"
         />
       </div>
     </section>

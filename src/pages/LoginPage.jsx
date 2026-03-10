@@ -9,6 +9,7 @@ import LoginForm from "../components/LoginForm";
 import Button from "../components/Button";
 import "./style.css";
 import RegisterForm from "../components/RegisterForm";
+import LoginNavBar from "../components/LoginNavBar";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -43,56 +44,53 @@ function LoginPage() {
       <main className="main-content">
         <div className="login-container">
           <Header />
+          <LoginNavBar
+           isLogging={isUserLogging} 
+           setIsLogging={setIsUserLogging} />
           <form onSubmit={(e) => e.preventDefault()}>
             <LoginForm
               onUserInputChange={updateName}
               onPassInputChange={updatePassword}
             />
-            <div className="button-container">
+            <div className="button-container-login">
               <Button
                 isButtonClicked={handleLoginAction}
                 buttonName={"Entrar"}
               />
-              <Button
-                buttonName={"Registrar-se"}
-                isButtonClicked={() => setIsUserLogging(false)}
-              />
             </div>
             <hr></hr>
           </form>
-          <Link className="pass-recovery" to="/recuperacao">
-            Esqueceu a senha?
-          </Link>
           <Footer />
         </div>
       </main>
     );
   }
-  return (
+  if(!isUserLogging){
+    return (
     <main className="main-content">
       <div className="login-container">
         <Header />
+        <LoginNavBar
+        isLogging={isUserLogging} 
+        setIsLogging={setIsUserLogging}/>
         <RegisterForm
           onUserInputRegister={updateName}
           onEmailInputRegister={updateEmail}
           onPassInputRegister={updatePassword}
         />
-        <div className="button-container">
+        <div className="button-container-register">
           <Button
             buttonName={"Inscrever-se"}
             isButtonClicked={() => {
               handleRegisterAction();
             }}
           />
-          <Button
-            buttonName={"Já possuo conta"}
-            isButtonClicked={() => setIsUserLogging(true)}
-          />
         </div>
+        <hr></hr>
         <Footer />
       </div>
     </main>
   );
 }
-
+}
 export default LoginPage;

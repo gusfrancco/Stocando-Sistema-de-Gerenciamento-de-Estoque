@@ -1,28 +1,96 @@
-.login-container {
-  border-radius: 10px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.1),
-    0 8px 16px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  justify-content: center;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f4f7f9; 
+  font-family: 'Inter', -apple-system, sans-serif;
 }
-.button-container {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  justify-content: center;
-}
+
 .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0;
+  width: 100vw;
 }
-.login-container .pass-recovery {
+
+.login-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px; 
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.login-container header {
+  
+  text-align: center;
+}
+
+.button-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.button-container-register button {
+  width: 100%;
+  padding: 14px;
+  background-color: #ffc107; /* Amarelo Optimus */
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.button-container-login button {
+  width: 100%;
+  padding: 14px;
+  background-color: #003D7A; /* Amarelo Optimus */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button-container button:hover {
+  background-color: #e0a800;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #f0f0f0;
+  margin: 25px 0 15px 0;
+}
+
+.pass-recovery {
+  text-align: center;
+  color: #6c757d;
   text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
 }
+

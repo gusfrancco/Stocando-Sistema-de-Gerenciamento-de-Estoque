@@ -8,13 +8,18 @@ function RegisterForm({
   return (
     <section>
       <div className="login-input">
-        <input onChange={onUserInputRegister} type="text" placeholder="Nome" />
+        <p>Nome</p>
+        <input onChange={onUserInputRegister} type="text" placeholder="Seu nome" />
+        <p>E-mail</p>
+        
         <input
           onChange={onEmailInputRegister}
           type="text"
-          placeholder="Email"
+          placeholder="seuemail@email.com"
         />
-        <input onChange={onPassInputRegister} type="text" placeholder="Senha" />
+        <p>Senha</p>
+        
+        <input onChange={onPassInputRegister} type="text" placeholder="••••••••" />
       </div>
     </section>
   );
