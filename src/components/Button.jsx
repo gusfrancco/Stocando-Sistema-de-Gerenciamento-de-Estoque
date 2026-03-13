@@ -1,7 +1,3 @@
-import { useNavigate } from "react-router-dom";
-import LoginPage from "../pages/LoginPage";
-import UserGreeting from "./UserGreeting";
-
 function Button({ isButtonClicked, buttonName }) {
   const handleClick = () => {
     isButtonClicked(true);

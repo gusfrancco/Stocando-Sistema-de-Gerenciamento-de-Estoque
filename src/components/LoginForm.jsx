@@ -5,7 +5,11 @@ function LoginForm({ onUserInputChange, onPassInputChange }) {
     <section>
       <div className="login-input">
         <p>E-mail</p>
-        <input onChange={onUserInputChange} type="text" placeholder="seuemail@email.com" />
+        <input
+          onChange={onUserInputChange}
+          type="text"
+          placeholder="seuemail@email.com"
+        />
         <p>Senha</p>
         <input
           onChange={onPassInputChange}

@@ -5,6 +5,9 @@
   padding: 5px;
   margin-bottom: 25px;
   width: 100%;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .nav-button {
@@ -16,9 +19,8 @@
   font-weight: 600;
   color: #666;
   border-radius: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
-
 
 .nav-button.active {
   background-color: #ffffff;

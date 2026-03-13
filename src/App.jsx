@@ -1,6 +1,7 @@
 import LoginPage from "./pages/LoginPage.jsx";
 import RecoverPage from "./pages/PassRecoverPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
 
@@ -10,7 +11,14 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/recuperacao" element={<RecoverPage />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <HomePage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </main>
   );

@@ -1,25 +1,26 @@
-import { useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import UserGreeting from "../components/UserGreeting";
+
 function HomePage() {
-  //pega o username do LoginPage e tras pra ca
-  const location = useLocation();
-  const userImport = location.state?.user;
-  //verifica se o usuário foi inserido e manda de volta caso !
+  const { userName, setUserName } = useContext(UserContext);
   const navigate = useNavigate();
-  useEffect(() => {
-    if (!location.state?.user) {
-      navigate("/");
-    }
-  }, [location.state, navigate]);
+
+  const handleLogout = () => {
+    setUserName("");
+    navigate("/");
+  };
 
   return (
-    <main>
-      <div>
-        <UserGreeting user={userImport} />
-      </div>
-    </main>
+    <div style={{ padding: "20px", textAlign: "center" }}>
+      <h1>Bem-vindo ao Stocando, {userName || "Usuário"}!</h1>
+      <button
+        onClick={handleLogout}
+        style={{ padding: "10px 20px", cursor: "pointer", marginTop: "20px" }}
+      >
+        Sair do Sistema
+      </button>
+    </div>
   );
 }
 export default HomePage;
